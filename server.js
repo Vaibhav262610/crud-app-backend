@@ -6,6 +6,7 @@ const app = express()
 app.use(cors())
 require('dotenv').config();
 
+const PORT = process.env.PORT
 const MONGO_URI = process.env.MONGO_URI
 
 mongoose.connect(MONGO_URI)
@@ -48,7 +49,7 @@ app.delete('/deleteUser/:id', (req, res) => {
 
 })
 
-app.listen(3001, () => {
-    console.log("SERVER IS RUNNING ON PORT 3001");
+app.listen(PORT, () => {
+    console.log(`SERVER IS RUNNING ON PORT ${PORT} `);
 
 })
