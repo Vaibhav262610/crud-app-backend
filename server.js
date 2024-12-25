@@ -15,7 +15,7 @@ app.use(express.json())
 
 app.post('/create-user', (req, res) => {
     UserModel.create(req.body)
-        .then(users => res.json(users))
+        .then(users => res.json({ msg: "Data entered successfully" }))
         .catch(err => res.json(err))
 })
 app.get('/', (req, res) => {
